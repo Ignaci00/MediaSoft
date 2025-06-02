@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Edad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      padding: 40px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="number"], input[type="submit"] {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .resultado {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<form id="edadForm">
+  <h2>Calcula tu edad</h2>
+  <label for="anio">Año de nacimiento:</label>
+  <input type="number" id="anio" required>
+
+  <label for="mes">Mes de nacimiento:</label>
+  <input type="number" id="mes" min="1" max="12" required>
+
+  <label for="dia">Día de nacimiento:</label>
+  <input type="number" id="dia" min="1" max="31" required>
+
+  <input type="submit" value="Calcular Edad">
+</form>
+
+<div class="resultado" id="resultado"></div>
+
+<script>
+  document.getElementById('edadForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const anio = parseInt(document.getElementById('anio').value);
+    const mes = parseInt(document.getElementById('mes').value);
+    const dia = parseInt(document.getElementById('dia').value);
+
+    const hoy = new Date();
+    let edad = hoy.getFullYear() - anio;
+
+    if (
+      hoy.getMonth() + 1 < mes ||
+      (hoy.getMonth() + 1 === mes && hoy.getDate() < dia)
+    ) {
+      edad--;
+    }
+
+    document.getElementById('resultado').textContent = `Tienes ${edad} años.`;
+  });
+</script>
+
+</body>
+</html>

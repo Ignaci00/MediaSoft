@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Actividades</title>
+</head>
+<body>
+    <div class="container">
+        <h2>¿CON QUIÉN COMPARTIREMOS HOY?</h2>
+        <h2>¿DÓNDE IREMOS?</h2>
+        <h2>¿QUIÉN (ES) NOS VISITA (N)?</h2>
+
+        <p class="descripcion">
+            En este espacio te pedimos que anotes aquellas vivencias, eventos referidos a visitas, paseos, experiencias, 
+            intercambios, charlas, reuniones u otras actividades, realizadas con el grupo de niños y niñas, las familias y otras 
+            instituciones de la comunidad. Podrías incluir intercambios o visitas realizadas por algún miembro de la familia o 
+            la comunidad al Centro Educativo para compartir vivencias con los niños y las niñas.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>FECHA</th>
+                    <th>ACTIVIDADES PROGRAMADAS, VISITANTES…</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    for (let i = 0; i < 6; i++) {
+                        document.write('<tr><td></td><td></td></tr>');
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- CSS colocado al final SIN MODIFICAR -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .descripcion {
+            text-align: justify;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        thead th {
+            background-color: #d3d3d3;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            border: 1px solid black;
+            font-weight: bold;
+        }
+
+        thead th:nth-child(1) { width: 20%; }  
+        thead th:nth-child(2) { width: 80%; }  
+
+        tbody td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid black;
+            height: 50px;
+        }
+    </style>
+</body>
+</html>
+!

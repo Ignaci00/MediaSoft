@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Actividades</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Incluyendo FontAwesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: white;
+            margin: 20px;
+            
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #e4e4e4;
+        }
+        th {
+            background-color: #fafafa;
+            color: #000000;
+        }
+        tr:nth-child(even) {
+            background-color: #fefefe;
+        }
+        .status {
+            cursor: pointer;
+        }
+        .not-entregado {
+            color: #000000;
+        }
+        .entregado {
+            color: #000000;
+        }
+        td {
+            font-size: 14px;
+        }
+        .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        .icon-container i {
+            font-size: 20px;
+            padding: 5px;
+        }
+        .not-entregado i {
+            color: #f44236;
+        }
+        .entregado i {
+            color: #4cb04f;
+        }
+        .icon-container span {
+            font-size: 11px;
+        }
+
+        h2 {
+            color: #000000;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registro de Actividades</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Profesor</th>
+                <th>%</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>LENGUAS EXTRANJERAS: INGLÉS</td>
+                <td>Gumercinda Perez 12</td>
+                <td>3/9</td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>3/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>4/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>5/5</span>
+                    </div>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>LENGUA ESPAÑOLA</td>
+                <td>Gumercinda Perez 140</td>
+                <td>3/6</td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>5/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>5/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>5/5</span>
+                    </div>
+                </td>
+                 <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>EDUCACIÓN FÍSICA</td>
+                <td>Carlos Garcia 7</td>
+                <td>5/6</td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>3/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>4/5</span>
+                    </div>
+                </td>
+               <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>5/5</span>
+                    </div>
+                </td>
+               <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>5/5</span>
+                    </div>
+                </td>
+               <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>4/5</span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>MATEMATICAS</td>
+                <td>Gumercinda Perez 254</td>
+                <td>5/6</td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>3/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status not-entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-times-circle"></i>
+                        <span>0/5</span>
+                    </div>
+                </td>
+                <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>4/5</span>
+                    </div>
+                </td>
+               <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>5/5</span>
+                    </div>
+                </td>
+               <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>5/5</span>
+                    </div>
+                </td>
+               <td class="status entregado">
+                    <div class="icon-container">
+                        <i class="fas fa-check-circle"></i>
+                        <span>4/5</span>
+                    </div>
+                </td>
+            </tr>
+            
+
+        </tbody>
+    </table>
+    
+    <script>
+        function showStatus(element) {
+            let status = element.classList.contains("entregado") ? "Entregado" : "0/5";
+            Swal.fire({
+                title: "Estado de la Actividad",
+                text: `Esta actividad está: ${status}`,
+                icon: status === "Entregado" ? "success" : "error"
+            });
+        }
+    </script>
+</body>
+</html>

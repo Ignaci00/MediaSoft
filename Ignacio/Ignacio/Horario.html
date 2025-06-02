@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario Resumido</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+  
+</head>
+<body>
+    <div class="container-horario">
+        <h2>Horario Resumido</h2>
+        <table  class="table-hide-last-row">
+            <tr>
+                <th>Materia</th>
+                <th>Entregadas/Total</th>
+                <th>% Entregado</th>
+            </tr>
+            <tr><td>Inglés</td><td>4/9</td><td><div class="progress-bar-container"><div class="progress-bar" style="width: 50%;"></div></div></td></tr>
+            <tr><td>Lengua Española</td><td>3/6</td><td><div class="progress-bar-container"><div class="progress-bar" style="width: 45%;"></div></div></td></tr>
+            <tr><td>Educación Física</td><td>2/6</td><td><div class="progress-bar-container"><div class="progress-bar" style="width: 33%;"></div></div></td></tr>
+            <tr><td>Matemáticas</td><td>0/4</td><td><div class="progress-bar-container"><div class="progress-bar" style="width: 0%;"></div></div></td></tr>
+        </table>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById("popupMenu").classList.toggle("show-menu");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.expand-button')) {
+                var menus = document.getElementsByClassName("popup-menu");
+                for (var i = 0; i < menus.length; i++) {
+                    var openMenu = menus[i];
+                    if (openMenu.classList.contains('show-menu')) {
+                        openMenu.classList.remove('show-menu');
+                    }
+                }
+            }
+        }
+    </script>
+      <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            
+        }
+        .container-horario {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            padding-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #fafafa;
+            color: #000000;
+        }
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 10px;
+            background-color: #2196f3;
+            transition: width 0.5s;
+        }
+        
+        h2 {
+            color: #000000;
+            font-weight: normal;
+            margin-top: 7px;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+
+    </style>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Padres y Madres</title>
+</head>
+<body>
+    <div class="container">
+        <h2>DATOS RELATIVOS A LOS PADRES Y LAS MADRES DE LOS NIÑOS Y NIÑAS</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Nombres y apellidos</th>
+                    <th>Edad</th>
+                    <th>Dirección</th>
+                    <th>Correo electrónico, teléfono, celular</th>
+                    <th>Nivel educativo</th>
+                    <th>Profesión, ocupación, oficio</th>
+                    <th>Lugar de trabajo</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    for (let i = 1; i <= 15; i++) {
+                        document.write('<tr>');
+                        document.write('<td>' + i + '</td>');
+                        for (let j = 0; j < 8; j++) {
+                            document.write('<td></td>');
+                        }
+                        document.write('</tr>');
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- CSS colocado al final SIN MODIFICAR -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .container {
+            width: 95%;
+            margin: auto;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        /* Estilos para las cabeceras */
+        thead th {
+            background-color: #d3d3d3;
+            padding: 8px;
+            text-align: center;
+            border: 1px solid black;
+            font-weight: bold;
+            font-size: 13px; 
+        }
+
+        thead th:nth-child(1) { width: 3%; }  
+        thead th:nth-child(2) { width: 20%; }
+        thead th:nth-child(3) { width: 4%; }  
+        thead th:nth-child(4) { width: 15%; } 
+        thead th:nth-child(5) { width: 15%; } 
+        thead th:nth-child(6) { width: 10%; }
+        thead th:nth-child(7) { width: 15%; }
+        thead th:nth-child(8) { width: 10%; }
+        thead th:nth-child(9) { width: 10%; }
+
+        /* Estilos para las celdas */
+        tbody td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid black;
+            height: 20px;  /* Altura de las filas */
+            font-size: 13px; /* Tamaño ajustado para el contenido */
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Resumido</title>
+
+  </head>
+  <style>
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calendar-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header button {
+    background: #ddd;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    justify-items: center;
+    width: 10 0%;
+    max-width: 420px; 
+}
+
+.calendar-day {
+    width: 55px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.calendar-day.empty {
+    background: none;
+    border: none;
+    visibility: hidden;
+}
+
+.event {
+    background: #ffcc00;
+    color: #333;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-top: 2px;
+    text-align: center;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+day-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    padding: 10px ;
+}
+
+</style>
+<body>
+
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prevMonth">←</button>
+            <h2 id="monthYear"></h2>
+            <button id="nextMonth">→</button>
+        </div>
+
+        <div class="calendar-grid">
+            <div class="day-name">Sun</div>
+            <div class="day-name">Mon</div>
+            <div class="day-name">Tue</div>
+            <div class="day-name">Wed</div>
+            <div class="day-name">Thu</div>
+            <div class="day-name">Fri</div>
+            <div class="day-name">Sat</div>
+        </div>
+
+        <div id="calendarDays" class="calendar-grid"></div>
+    </div>
+
+    <script>document.addEventListener("DOMContentLoaded", function() {
+    const monthYear = document.getElementById("monthYear");
+    const calendarDays = document.getElementById("calendarDays");
+    const prevMonthBtn = document.getElementById("prevMonth");
+    const nextMonthBtn = document.getElementById("nextMonth");
+
+    let currentDate = new Date();
+
+    const events = {
+        "2025-01-10": ["Natalicio"],
+        "2025-01-11": ["Natalicio"],
+        "2025-01-12": ["Aniversario"],
+        "2025-01-13": ["Día especial"],
+        "2025-01-15": ["Natalicio"],
+        "2025-02-21": ["Festividad"],
+        "2025-02-24": ["Aniversario"],
+        "2025-02-26": ["Natalicio"]
+    };
+
+    function renderCalendar() {
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const firstWeekday = firstDay.getDay();
+        const totalDays = lastDay.getDate();
+    
+        monthYear.textContent = firstDay.toLocaleString("es-ES", { month: "long", year: "numeric" });
+    
+        calendarDays.innerHTML = "";
+    
+        // Agregar días vacíos al inicio para alinear los días correctamente
+        for (let i = 0; i < firstWeekday; i++) {
+            const emptyDiv = document.createElement("div");
+            emptyDiv.classList.add("calendar-day", "empty");
+            calendarDays.appendChild(emptyDiv);
+        }
+    
+        // Agregar los días del mes
+        for (let day = 1; day <= totalDays; day++) {
+            const dayElement = document.createElement("div");
+            dayElement.classList.add("calendar-day");
+            dayElement.textContent = day;
+    
+            const dateKey = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+            if (events[dateKey]) {
+                events[dateKey].slice(0, 2).forEach(event => {
+                    const eventEl = document.createElement("div");
+                    eventEl.classList.add("event");
+                    eventEl.textContent = event;
+                    dayElement.appendChild(eventEl);
+                });
+            }
+    
+            calendarDays.appendChild(dayElement);
+        }
+    }
+    
+    
+    prevMonthBtn.addEventListener("click", () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+    });
+
+    nextMonthBtn.addEventListener("click", () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+    });
+
+    renderCalendar();
+});
+</script>
+
+</body>
+</html>
